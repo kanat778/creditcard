@@ -5,16 +5,13 @@ import (
 	"strings"
 )
 
-func AlgorithmLuna(arr string) bool {
-	arr = strings.ReplaceAll(arr, " ", "")
-	fmt.Println("Arr =", arr)
+func AlgorithmLuna(s string) bool {
+	s = strings.ReplaceAll(s, " ", "")
+	fmt.Println("Arr =", s)
 	sum := 0
 	double := false
-	for i := len(arr) - 1; i >= 0; i-- {
-		//if arr[i] < '0' || arr[i] > '9' {
-		//	continue
-		//}
-		digit := int(arr[i] - '0')
+	for i := len(s) - 1; i >= 0; i-- {
+		digit := int(s[i] - '0')
 
 		if double {
 			digit = digit * 2
@@ -25,6 +22,5 @@ func AlgorithmLuna(arr string) bool {
 		sum = sum + digit
 		double = !double
 	}
-
 	return sum%10 == 0
 }
