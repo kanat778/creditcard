@@ -1,16 +1,13 @@
 package main
 
-import (
-	"fmt"
-	"strings"
-)
-
 func AlgorithmLuna(s string) bool {
-	s = strings.ReplaceAll(s, " ", "")
-	fmt.Println("Arr =", s)
+
 	sum := 0
 	double := false
 	for i := len(s) - 1; i >= 0; i-- {
+		if s[i] < '0' || s[i] > '9' {
+			return false
+		}
 		digit := int(s[i] - '0')
 
 		if double {
